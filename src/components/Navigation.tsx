@@ -1,7 +1,8 @@
 
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
-import { Menu, X } from "lucide-react";
+import { Menu, X, Battery, Lightbulb, BarChart3, Info, Phone } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -14,30 +15,39 @@ const Navigation = () => {
     <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <div className="container flex h-16 items-center">
         <div className="flex w-full justify-between items-center">
-          <a href="#" className="flex items-center space-x-2">
-            <span className="text-xl font-bold text-navy-950">
-              <span className="text-brand-600">Nova</span>Studio
+          <Link to="/" className="flex items-center space-x-2">
+            <Battery className="h-8 w-8 text-bessify-green-600" />
+            <span className="text-xl font-bold text-gray-900">
+              <span className="text-bessify-green-600">Bessify</span>
             </span>
-          </a>
+          </Link>
           
           <nav className="hidden md:flex items-center space-x-6">
-            <a href="#features" className="text-sm font-medium transition-colors hover:text-primary">
-              Features
-            </a>
-            <a href="#testimonials" className="text-sm font-medium transition-colors hover:text-primary">
-              Testimonials
-            </a>
-            <a href="#about" className="text-sm font-medium transition-colors hover:text-primary">
-              About
-            </a>
-            <a href="#contact" className="text-sm font-medium transition-colors hover:text-primary">
+            <Link to="/" className="text-sm font-medium transition-colors hover:text-bessify-green-600 flex items-center gap-1">
+              <Lightbulb className="w-4 h-4" />
+              Home
+            </Link>
+            <Link to="/about" className="text-sm font-medium transition-colors hover:text-bessify-green-600 flex items-center gap-1">
+              <Info className="w-4 h-4" />
+              About Us
+            </Link>
+            <Link to="/dashboard" className="text-sm font-medium transition-colors hover:text-bessify-green-600 flex items-center gap-1">
+              <BarChart3 className="w-4 h-4" />
+              Dashboard
+            </Link>
+            <Link to="/products" className="text-sm font-medium transition-colors hover:text-bessify-green-600 flex items-center gap-1">
+              <Battery className="w-4 h-4" />
+              Products
+            </Link>
+            <Link to="/contact" className="text-sm font-medium transition-colors hover:text-bessify-green-600 flex items-center gap-1">
+              <Phone className="w-4 h-4" />
               Contact
-            </a>
+            </Link>
           </nav>
           
           <div className="hidden md:flex items-center space-x-4">
-            <Button variant="outline" size="sm">Log in</Button>
-            <Button size="sm">Sign up</Button>
+            <Button variant="outline" size="sm" className="border-bessify-green-600 text-bessify-green-600 hover:bg-bessify-green-50">Request Demo</Button>
+            <Button size="sm" className="bg-bessify-green-600 hover:bg-bessify-green-700">Get a Quote</Button>
           </div>
           
           <button className="md:hidden" onClick={toggleMenu} aria-label="Toggle menu">
@@ -51,39 +61,51 @@ const Navigation = () => {
       </div>
       
       {isOpen && (
-        <div className="md:hidden container py-4 fixed inset-x-0 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 border-b">
+        <div className="md:hidden container py-4 fixed inset-x-0 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 border-b z-50">
           <nav className="flex flex-col space-y-4">
-            <a 
-              href="#features" 
-              className="text-sm font-medium transition-colors hover:text-primary"
+            <Link 
+              to="/" 
+              className="text-sm font-medium transition-colors hover:text-bessify-green-600 flex items-center gap-1"
               onClick={toggleMenu}
             >
-              Features
-            </a>
-            <a 
-              href="#testimonials" 
-              className="text-sm font-medium transition-colors hover:text-primary"
+              <Lightbulb className="w-4 h-4" />
+              Home
+            </Link>
+            <Link 
+              to="/about" 
+              className="text-sm font-medium transition-colors hover:text-bessify-green-600 flex items-center gap-1"
               onClick={toggleMenu}
             >
-              Testimonials
-            </a>
-            <a 
-              href="#about" 
-              className="text-sm font-medium transition-colors hover:text-primary"
+              <Info className="w-4 h-4" />
+              About Us
+            </Link>
+            <Link 
+              to="/dashboard" 
+              className="text-sm font-medium transition-colors hover:text-bessify-green-600 flex items-center gap-1"
               onClick={toggleMenu}
             >
-              About
-            </a>
-            <a 
-              href="#contact" 
-              className="text-sm font-medium transition-colors hover:text-primary"
+              <BarChart3 className="w-4 h-4" />
+              Dashboard
+            </Link>
+            <Link 
+              to="/products" 
+              className="text-sm font-medium transition-colors hover:text-bessify-green-600 flex items-center gap-1"
               onClick={toggleMenu}
             >
+              <Battery className="w-4 h-4" />
+              Products
+            </Link>
+            <Link 
+              to="/contact" 
+              className="text-sm font-medium transition-colors hover:text-bessify-green-600 flex items-center gap-1"
+              onClick={toggleMenu}
+            >
+              <Phone className="w-4 h-4" />
               Contact
-            </a>
+            </Link>
             <div className="flex flex-col space-y-2 pt-2">
-              <Button variant="outline" size="sm">Log in</Button>
-              <Button size="sm">Sign up</Button>
+              <Button variant="outline" size="sm" className="border-bessify-green-600 text-bessify-green-600 hover:bg-bessify-green-50">Request Demo</Button>
+              <Button size="sm" className="bg-bessify-green-600 hover:bg-bessify-green-700">Get a Quote</Button>
             </div>
           </nav>
         </div>

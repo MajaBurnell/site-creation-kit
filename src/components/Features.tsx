@@ -1,66 +1,79 @@
 
 import { 
-  Code, 
-  LineChart, 
-  Smartphone, 
+  Battery, 
+  BarChart3, 
   Zap, 
+  Cpu, 
   Shield, 
-  Globe 
+  Globe,
+  LightbulbOff,
+  Leaf
 } from "lucide-react";
 
 const features = [
   {
-    icon: <Zap className="w-10 h-10 text-blue-500" />,
-    title: "Lightning Fast",
-    description: "Optimized for speed and performance. Your websites load in milliseconds, not seconds."
+    icon: <Battery className="w-10 h-10 text-bessify-green-600" />,
+    title: "High-Capacity Storage",
+    description: "Our BESS systems deliver industry-leading energy storage capacity with compact design and long cycle life."
   },
   {
-    icon: <Smartphone className="w-10 h-10 text-blue-500" />,
-    title: "Fully Responsive",
-    description: "Designs that look perfect on every device, from desktop monitors to mobile phones."
+    icon: <Zap className="w-10 h-10 text-bessify-green-600" />,
+    title: "Rapid Response",
+    description: "Millisecond response times ensure immediate power delivery when you need it most, perfect for grid stabilization."
   },
   {
-    icon: <Code className="w-10 h-10 text-blue-500" />,
-    title: "No Coding Required",
-    description: "Our visual builder makes it easy for anyone to create professional websites without code."
+    icon: <Cpu className="w-10 h-10 text-bessify-green-600" />,
+    title: "Smart Management",
+    description: "Advanced battery management system optimizes charging cycles and extends the lifespan of your investment."
   },
   {
-    icon: <LineChart className="w-10 h-10 text-blue-500" />,
-    title: "Built-in Analytics",
-    description: "Understand your visitors with comprehensive analytics and insights."
+    icon: <BarChart3 className="w-10 h-10 text-bessify-green-600" />,
+    title: "Energy Analytics",
+    description: "Comprehensive monitoring and reporting tools help you track performance and maximize your energy efficiency."
   },
   {
-    icon: <Shield className="w-10 h-10 text-blue-500" />,
-    title: "Rock Solid Security",
-    description: "Enterprise-grade security to keep your website and data protected."
+    icon: <Shield className="w-10 h-10 text-bessify-green-600" />,
+    title: "Safety First Design",
+    description: "Multiple layers of protection with thermal management and advanced fire suppression systems."
   },
   {
-    icon: <Globe className="w-10 h-10 text-blue-500" />,
-    title: "Global CDN",
-    description: "Content delivery network ensures fast loading times worldwide."
+    icon: <LightbulbOff className="w-10 h-10 text-bessify-green-600" />,
+    title: "Blackout Protection",
+    description: "Ensure continuous operation during power outages with our reliable backup systems."
+  },
+  {
+    icon: <Leaf className="w-10 h-10 text-bessify-green-600" />,
+    title: "Eco-Friendly",
+    description: "Designed with sustainability in mind, our systems help reduce carbon emissions and support clean energy transition."
+  },
+  {
+    icon: <Globe className="w-10 h-10 text-bessify-green-600" />,
+    title: "Scalable Solutions",
+    description: "From residential to utility-scale, our modular design allows your energy storage to grow with your needs."
   }
 ];
 
 const Features = () => {
   return (
-    <section id="features" className="py-20 bg-gray-50">
+    <section id="features" className="py-20 bg-bessify-green-50">
       <div className="container">
-        <div className="text-center max-w-3xl mx-auto mb-16">
-          <h2 className="mb-4 text-navy-950">
-            Powerful Features That <span className="gradient-text">Set Us Apart</span>
+        <div className="text-center max-w-3xl mx-auto mb-16 animate-on-scroll">
+          <h2 className="mb-4 text-gray-900">
+            Advanced <span className="gradient-text">BESS Solutions</span> for Sustainable Energy
           </h2>
           <p className="text-lg text-gray-600">
-            Build websites that stand out with our comprehensive set of features designed to give you the edge.
+            Our Battery Energy Storage Systems provide cutting-edge technology for reliable, sustainable energy management.
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
           {features.map((feature, index) => (
             <div 
               key={index} 
-              className="bg-white rounded-xl p-6 shadow-sm border border-gray-100 hover:shadow-md transition-shadow"
+              className="bessify-card animate-on-scroll"
+              style={{ animationDelay: `${index * 0.1}s` }}
             >
-              <div className="mb-4 rounded-full bg-blue-50 w-16 h-16 flex items-center justify-center">
+              <div className="bessify-icon-container">
                 {feature.icon}
               </div>
               <h3 className="text-xl font-bold mb-2">{feature.title}</h3>
