@@ -11,7 +11,7 @@ import {
   Factory, 
   ArrowRight, 
   Check,
-  Buildings,
+  Building,
   Download,
   BarChart3
 } from "lucide-react";
@@ -40,7 +40,7 @@ const productCategories = [
   {
     id: "utility",
     name: "Utility",
-    icon: <Buildings className="w-5 h-5" />,
+    icon: <Building className="w-5 h-5" />,
     description: "Grid-scale solutions for energy providers"
   }
 ];

@@ -16,7 +16,8 @@ import {
   LineChart,
   PieChart,
   LayoutGrid,
-  AlertCircle
+  AlertCircle,
+  Leaf
 } from "lucide-react";
 import {
   LineChart as RechartsLineChart,
