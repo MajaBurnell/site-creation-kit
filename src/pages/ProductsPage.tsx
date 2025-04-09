@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
@@ -326,7 +325,7 @@ const ProductsPage = () => {
                   description: "Ensure continuous operation during grid outages, protecting critical operations and providing peace of mind."
                 },
                 {
-                  icon: <Buildings className="w-10 h-10 text-bessify-green-600" />,
+                  icon: <Building className="w-10 h-10 text-bessify-green-600" />,
                   title: "Microgrids",
                   description: "Create self-sufficient energy systems that can operate independently from the main grid when necessary."
                 },
