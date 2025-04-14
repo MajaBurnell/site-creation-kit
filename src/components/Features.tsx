@@ -13,43 +13,43 @@ import {
 const features = [
   {
     icon: <Battery className="w-10 h-10 text-bessify-green-600" />,
-    title: "High-Capacity Storage",
-    description: "Our BESS systems deliver industry-leading energy storage capacity with compact design and long cycle life."
+    title: "To be done",
+    description: "To be done"
   },
   {
     icon: <Zap className="w-10 h-10 text-bessify-green-600" />,
-    title: "Rapid Response",
-    description: "Millisecond response times ensure immediate power delivery when you need it most, perfect for grid stabilization."
+    title: "To be done",
+    description: "To be done"
   },
   {
     icon: <Cpu className="w-10 h-10 text-bessify-green-600" />,
-    title: "Smart Management",
-    description: "Advanced battery management system optimizes charging cycles and extends the lifespan of your investment."
+    title: "To be done",
+    description: "To be done"
   },
   {
     icon: <BarChart3 className="w-10 h-10 text-bessify-green-600" />,
-    title: "Energy Analytics",
-    description: "Comprehensive monitoring and reporting tools help you track performance and maximize your energy efficiency."
+    title: "To be done",
+    description: "To be done"
   },
   {
     icon: <Shield className="w-10 h-10 text-bessify-green-600" />,
-    title: "Safety First Design",
-    description: "Multiple layers of protection with thermal management and advanced fire suppression systems."
+    title: "To be done",
+    description: "To be done"
   },
   {
     icon: <LightbulbOff className="w-10 h-10 text-bessify-green-600" />,
-    title: "Blackout Protection",
-    description: "Ensure continuous operation during power outages with our reliable backup systems."
+    title: "To be done",
+    description: "To be done"
   },
   {
     icon: <Leaf className="w-10 h-10 text-bessify-green-600" />,
-    title: "Eco-Friendly",
-    description: "Designed with sustainability in mind, our systems help reduce carbon emissions and support clean energy transition."
+    title: "To be done",
+    description: "To be done"
   },
   {
     icon: <Globe className="w-10 h-10 text-bessify-green-600" />,
-    title: "Scalable Solutions",
-    description: "From residential to utility-scale, our modular design allows your energy storage to grow with your needs."
+    title: "To be done",
+    description: "To be done"
   }
 ];
 
@@ -62,7 +62,7 @@ const Features = () => {
             Advanced <span className="gradient-text">BESS Solutions</span> for Sustainable Energy
           </h2>
           <p className="text-lg text-gray-600">
-            Our Battery Energy Storage Systems provide cutting-edge technology for reliable, sustainable energy management.
+            To be done
           </p>
         </div>
 
