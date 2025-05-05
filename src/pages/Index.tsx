@@ -1,4 +1,3 @@
-
 import Navigation from "@/components/Navigation";
 import Hero from "@/components/Hero";
 import Features from "@/components/Features";
@@ -53,11 +52,11 @@ const Index = () => {
 
             <div className="grid md:grid-cols-2 gap-12 items-center">
               <div className="rounded-xl overflow-hidden">
-                <img 
-                  src="https://images.unsplash.com/photo-1620714223084-8fcacc6dfd8d?q=80&w=2071&auto=format&fit=crop"
-                  alt="Bessify BESS installation" 
-                  className="w-full h-full object-cover"
-                />
+                <div className="aspect-video bg-gradient-to-tr from-bessify-green-600 to-bessify-blue-600 rounded-xl flex items-center justify-center">
+                  <div className="text-white text-xl font-bold">
+                    Placeholder Image
+                  </div>
+                </div>
               </div>
               
               <div className="space-y-6 animate-on-scroll">

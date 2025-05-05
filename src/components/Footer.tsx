@@ -1,4 +1,3 @@
-
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { useState } from "react";
@@ -26,10 +25,10 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           <div>
             <div className="font-bold text-2xl mb-6">
-              <span className="text-brand-400">Nova</span>Studio
+              <span className="text-bessify-green-600">Bessify</span>
             </div>
             <p className="text-gray-400 mb-6">
-              Creating beautiful websites and digital experiences that help businesses thrive online.
+              Providing innovative energy storage solutions for a sustainable future.
             </p>
             <div className="flex space-x-4">
               <a href="#" className="text-gray-400 hover:text-white transition-colors">
@@ -94,7 +93,7 @@ const Footer = () => {
         
         <div className="flex flex-col md:flex-row justify-between items-center">
           <p className="text-gray-500 text-sm">
-            &copy; {new Date().getFullYear()} NovaStudio. All rights reserved.
+            &copy; {new Date().getFullYear()} Bessify. All rights reserved.
           </p>
           <div className="flex space-x-6 mt-4 md:mt-0">
             <a href="#" className="text-gray-500 hover:text-white text-sm transition-colors">
