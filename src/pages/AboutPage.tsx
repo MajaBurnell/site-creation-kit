@@ -159,26 +159,6 @@ const AboutPage = () => {
             </div>
           </div>
         </section>
-
-        {/* CTA Section */}
-        <section className="py-20 bg-bessify-blue-900 text-white">
-          <div className="container">
-            <div className="text-center max-w-3xl mx-auto">
-              <h2 className="mb-6">Join Our Mission for a <span className="text-bessify-green-400">Sustainable Future</span></h2>
-              <p className="text-xl mb-8 text-bessify-blue-100">
-                We're looking for talented individuals passionate about clean energy to join our growing team.
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Button className="bg-bessify-green-600 hover:bg-bessify-green-700 text-white" size="lg">
-                  View Open Positions
-                </Button>
-                <Button variant="outline" className="border-white text-white hover:bg-white/10" size="lg">
-                  Contact Us
-                </Button>
-              </div>
-            </div>
-          </div>
-        </section>
       </main>
       <Footer />
     </div>
