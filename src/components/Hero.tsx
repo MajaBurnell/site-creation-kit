@@ -1,3 +1,4 @@
+
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Battery, Sparkles, Leaf, Bolt } from "lucide-react";
 import { Link } from "react-router-dom";
@@ -49,42 +50,8 @@ const Hero = () => {
 
             <div className="relative animate-on-scroll">
               <div className="aspect-square bg-gradient-to-tr from-bessify-green-600 to-bessify-blue-600 rounded-xl shadow-2xl overflow-hidden relative">
-                <img 
-                  src="https://images.unsplash.com/photo-1509391366360-2e959784a276?q=80&w=2072&auto=format&fit=crop"
-                  alt="Battery Energy Storage System" 
-                  className="w-full h-full object-cover opacity-80 mix-blend-overlay"
-                />
-                <div className="absolute inset-0 bg-gradient-to-tr from-bessify-green-600/30 to-bessify-blue-600/30"></div>
-              </div>
-              
-              <div className="absolute top-0 right-0 -translate-y-12 translate-x-6 md:translate-x-20">
-                <div className="bg-white shadow-lg border rounded-lg p-4 w-48 md:w-64">
-                  <div className="flex items-center mb-2">
-                    <div className="h-3 w-3 rounded-full bg-bessify-green-500 mr-1"></div>
-                    <span className="text-sm text-gray-600 font-medium">Energy Output</span>
-                  </div>
-                  <div className="h-24 flex items-end justify-between space-x-2">
-                    {[70, 80, 65, 90, 85, 95, 75].map((height, i) => (
-                      <div key={i} 
-                        className="w-5 md:w-6 bg-gradient-to-t from-bessify-green-600 to-bessify-green-400 rounded-md" 
-                        style={{ height: `${height}%` }}
-                      ></div>
-                    ))}
-                  </div>
-                </div>
-              </div>
-              
-              <div className="absolute bottom-0 left-0 translate-y-12 -translate-x-6 md:-translate-x-12">
-                <div className="bg-white shadow-lg border rounded-lg p-4 max-w-xs">
-                  <div className="flex items-center space-x-4">
-                    <div className="rounded-full h-12 w-12 bg-bessify-green-100 flex items-center justify-center">
-                      <Sparkles className="w-6 h-6 text-bessify-green-600" />
-                    </div>
-                    <div>
-                      <p className="font-medium">Grid Stabilization</p>
-                      <p className="text-sm text-gray-500">Frequency regulation active</p>
-                    </div>
-                  </div>
+                <div className="flex items-center justify-center w-full h-full text-white text-xl font-bold">
+                  Placeholder Image
                 </div>
               </div>
             </div>

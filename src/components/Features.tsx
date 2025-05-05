@@ -3,11 +3,7 @@ import {
   Battery, 
   BarChart3, 
   Zap, 
-  Cpu, 
-  Shield, 
-  Globe,
-  LightbulbOff,
-  Leaf
+  Cpu
 } from "lucide-react";
 
 const features = [
@@ -28,26 +24,6 @@ const features = [
   },
   {
     icon: <BarChart3 className="w-10 h-10 text-bessify-green-600" />,
-    title: "To be done",
-    description: "To be done"
-  },
-  {
-    icon: <Shield className="w-10 h-10 text-bessify-green-600" />,
-    title: "To be done",
-    description: "To be done"
-  },
-  {
-    icon: <LightbulbOff className="w-10 h-10 text-bessify-green-600" />,
-    title: "To be done",
-    description: "To be done"
-  },
-  {
-    icon: <Leaf className="w-10 h-10 text-bessify-green-600" />,
-    title: "To be done",
-    description: "To be done"
-  },
-  {
-    icon: <Globe className="w-10 h-10 text-bessify-green-600" />,
     title: "To be done",
     description: "To be done"
   }
