@@ -5,33 +5,6 @@ import { Battery, Award, Users, Lightbulb, ChartBar, Target } from "lucide-react
 import { Button } from "@/components/ui/button";
 
 const AboutPage = () => {
-  const team = [
-    {
-      name: "Sarah Chen",
-      role: "Founder & CEO",
-      image: "https://randomuser.me/api/portraits/women/32.jpg",
-      bio: "Former energy grid specialist with 15+ years of experience in renewable energy systems."
-    },
-    {
-      name: "Michael Rodriguez",
-      role: "Chief Technology Officer",
-      image: "https://randomuser.me/api/portraits/men/44.jpg",
-      bio: "Electrical engineer specializing in advanced battery technology and energy management systems."
-    },
-    {
-      name: "Aisha Patel",
-      role: "VP of Operations",
-      image: "https://randomuser.me/api/portraits/women/28.jpg",
-      bio: "Supply chain expert focused on sustainable manufacturing and operational efficiency."
-    },
-    {
-      name: "James Wilson",
-      role: "Chief Sustainability Officer",
-      image: "https://randomuser.me/api/portraits/men/35.jpg",
-      bio: "Environmental scientist passionate about renewable energy adoption and carbon reduction."
-    }
-  ];
-
   const milestones = [
     {
       year: "2018",
@@ -143,33 +116,6 @@ const AboutPage = () => {
                 <h3 className="text-xl font-bold mb-2">Excellence</h3>
                 <p className="text-gray-600">We're committed to the highest standards of quality and performance.</p>
               </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Team Section */}
-        <section className="py-20">
-          <div className="container">
-            <div className="text-center max-w-3xl mx-auto mb-16">
-              <h2 className="mb-4 text-gray-900">Our <span className="gradient-text">Team</span></h2>
-              <p className="text-lg text-gray-600">
-                Meet the passionate experts leading our mission to transform energy storage.
-              </p>
-            </div>
-            
-            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-              {team.map((member, index) => (
-                <div key={index} className="bessify-card overflow-hidden">
-                  <img 
-                    src={member.image} 
-                    alt={member.name} 
-                    className="w-full aspect-square object-cover object-center rounded-lg mb-4"
-                  />
-                  <h3 className="font-bold text-lg">{member.name}</h3>
-                  <p className="text-bessify-green-600 mb-2">{member.role}</p>
-                  <p className="text-gray-600 text-sm">{member.bio}</p>
-                </div>
-              ))}
             </div>
           </div>
         </section>
