@@ -1,7 +1,7 @@
 
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
-import { Menu, X, Battery, Lightbulb, BarChart3, Info, Phone, BookOpen } from "lucide-react";
+import { Menu, X, Battery, Lightbulb, BarChart3, Info, Phone, BookOpen, Wrench } from "lucide-react";
 import { Link } from "react-router-dom";
 
 const Navigation = () => {
@@ -35,9 +35,9 @@ const Navigation = () => {
               <BarChart3 className="w-4 h-4" />
               Dashboard
             </Link>
-            <Link to="/products" className="text-sm font-medium transition-colors hover:text-bessify-green-600 flex items-center gap-1">
-              <Battery className="w-4 h-4" />
-              Products
+            <Link to="/why-bessify" className="text-sm font-medium transition-colors hover:text-bessify-green-600 flex items-center gap-1">
+              <Wrench className="w-4 h-4" />
+              Why Bessify
             </Link>
             <Link to="/how-it-works" className="text-sm font-medium transition-colors hover:text-bessify-green-600 flex items-center gap-1">
               <BookOpen className="w-4 h-4" />
@@ -92,12 +92,12 @@ const Navigation = () => {
               Dashboard
             </Link>
             <Link 
-              to="/products" 
+              to="/why-bessify" 
               className="text-sm font-medium transition-colors hover:text-bessify-green-600 flex items-center gap-1"
               onClick={toggleMenu}
             >
-              <Battery className="w-4 h-4" />
-              Products
+              <Wrench className="w-4 h-4" />
+              Why Bessify
             </Link>
             <Link 
               to="/how-it-works" 
