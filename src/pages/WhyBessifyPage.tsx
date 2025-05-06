@@ -198,11 +198,11 @@ const WhyBessifyPage = () => {
                 {/* Left side - Image */}
                 <div className="rounded-lg overflow-hidden shadow-md">
                   <AspectRatio ratio={16/9}>
-                    <img 
-                      src="/placeholder.svg" 
-                      alt="Battery energy storage system" 
-                      className="w-full h-full object-cover"
-                    />
+                    <div className="aspect-square bg-gradient-to-tr from-bessify-green-600 to-bessify-blue-600 rounded-xl shadow-2xl overflow-hidden relative">
+                      <div className="flex items-center justify-center w-full h-full text-white text-xl font-bold">
+                        Placeholder Image
+                      </div>
+                    </div>
                   </AspectRatio>
                 </div>
                 
