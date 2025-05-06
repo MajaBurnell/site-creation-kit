@@ -199,7 +199,7 @@ const WhyBessifyPage = () => {
                 <div className="rounded-lg overflow-hidden shadow-md">
                   <AspectRatio ratio={16/9}>
                     <img 
-                      src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158" 
+                      src="/placeholder.svg" 
                       alt="Battery energy storage system" 
                       className="w-full h-full object-cover"
                     />
@@ -270,7 +270,7 @@ const WhyBessifyPage = () => {
       </main>
       <Footer />
 
-      <style>{`
+      <style jsx>{`
         .bg-grid-pattern {
           background-image: 
             linear-gradient(to right, rgba(0, 0, 0, 0.05) 1px, transparent 1px),
