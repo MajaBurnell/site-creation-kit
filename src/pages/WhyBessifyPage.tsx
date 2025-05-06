@@ -113,7 +113,7 @@ const WhyBessifyPage = () => {
     {
       icon: <Shield className="h-8 w-8 text-bessify-green-600" />,
       title: "Targeted Water Suppression System",
-      description: "Forget "let it burn." In case of thermal runaway:",
+      description: "Forget \"let it burn.\" In case of thermal runaway:",
       benefits: [
         "Only the battery compartment floods — not the whole unit",
         "Neutralizes toxic gas release, protects adjacent systems, and is safe for responders",
@@ -135,7 +135,7 @@ const WhyBessifyPage = () => {
       description: "Our BESS can operate across 1–4 hour durations, dynamically adapting to project needs:",
       benefits: [
         "Four inverters per 4MWh unit = built-in redundancy",
-        "Supports fast-response market shifts (e.g. "duck curve" events)",
+        "Supports fast-response market shifts (e.g. \"duck curve\" events)",
         "Enables flexible discharge profiles for a range of energy markets"
       ]
     },
