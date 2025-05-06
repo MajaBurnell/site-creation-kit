@@ -1,4 +1,3 @@
-
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
@@ -7,7 +6,7 @@ import {
   Shield, 
   Snowflake, 
   Zap, 
-  Robot, 
+  Bolt, 
   Layers, 
   Settings, 
   Battery
@@ -216,7 +215,7 @@ const WhyBessifyPage = () => {
               <div className="mb-16">
                 <div className="flex items-center mb-4">
                   <div className="rounded-full bg-bessify-green-100 p-4 mr-4">
-                    <Robot className="h-8 w-8 text-bessify-green-600" />
+                    <Bolt className="h-8 w-8 text-bessify-green-600" />
                   </div>
                   <h2 className="text-2xl font-bold">7. Fully Automated, Scalable Manufacturing</h2>
                 </div>
