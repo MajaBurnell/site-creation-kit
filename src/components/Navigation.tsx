@@ -1,7 +1,7 @@
 
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
-import { Menu, X, Battery, Lightbulb, BarChart3, Info, Phone } from "lucide-react";
+import { Menu, X, Battery, Lightbulb, BarChart3, Info, Phone, BookOpen } from "lucide-react";
 import { Link } from "react-router-dom";
 
 const Navigation = () => {
@@ -38,6 +38,10 @@ const Navigation = () => {
             <Link to="/products" className="text-sm font-medium transition-colors hover:text-bessify-green-600 flex items-center gap-1">
               <Battery className="w-4 h-4" />
               Products
+            </Link>
+            <Link to="/how-it-works" className="text-sm font-medium transition-colors hover:text-bessify-green-600 flex items-center gap-1">
+              <BookOpen className="w-4 h-4" />
+              How It Works
             </Link>
             <Link to="/contact" className="text-sm font-medium transition-colors hover:text-bessify-green-600 flex items-center gap-1">
               <Phone className="w-4 h-4" />
@@ -94,6 +98,14 @@ const Navigation = () => {
             >
               <Battery className="w-4 h-4" />
               Products
+            </Link>
+            <Link 
+              to="/how-it-works" 
+              className="text-sm font-medium transition-colors hover:text-bessify-green-600 flex items-center gap-1"
+              onClick={toggleMenu}
+            >
+              <BookOpen className="w-4 h-4" />
+              How It Works
             </Link>
             <Link 
               to="/contact" 
