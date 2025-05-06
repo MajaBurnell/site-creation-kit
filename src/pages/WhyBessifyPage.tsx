@@ -1,7 +1,6 @@
 
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
-import { Button } from "@/components/ui/button";
 import { 
   Wrench, 
   Shield, 
@@ -13,7 +12,6 @@ import {
   Battery,
   ChevronRight
 } from "lucide-react";
-import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { 
   Card,
@@ -23,6 +21,7 @@ import {
   CardHeader,
   CardTitle
 } from "@/components/ui/card";
+import { AspectRatio } from "@/components/ui/aspect-ratio";
 
 const fadeInAnimationVariants = {
   initial: { opacity: 0, y: 20 },
@@ -181,26 +180,11 @@ const WhyBessifyPage = () => {
               <h1 className="mb-6 text-gray-900">
                 Why <span className="gradient-text">Bessify</span> Leads The Industry
               </h1>
-              <p className="text-xl text-gray-600 mb-10 max-w-3xl mx-auto">
-                Engineering the Future of Battery Storage Systems with Revolutionary Design and Technology
-              </p>
-              <div className="flex flex-wrap justify-center gap-4">
-                <Link to="/how-it-works">
-                  <Button size="lg" variant="outline" className="border-bessify-green-600 text-bessify-green-600 hover:bg-bessify-green-50">
-                    See How It Works
-                  </Button>
-                </Link>
-                <Link to="/contact">
-                  <Button size="lg" className="bg-bessify-green-600 hover:bg-bessify-green-700">
-                    Talk to an Expert
-                  </Button>
-                </Link>
-              </div>
             </motion.div>
           </div>
         </section>
 
-        {/* Introduction Section with Animated Background */}
+        {/* Introduction Section with Image and Text Side by Side */}
         <section className="py-16 bg-white relative">
           <div className="container">
             <motion.div 
@@ -208,16 +192,30 @@ const WhyBessifyPage = () => {
               whileInView={{ opacity: 1 }}
               transition={{ duration: 0.7 }}
               viewport={{ once: true }}
-              className="max-w-4xl mx-auto"
+              className="max-w-6xl mx-auto"
             >
-              <div className="bg-gradient-to-r from-bessify-green-50 to-bessify-blue-50 p-8 rounded-2xl shadow-sm">
-                <h2 className="text-3xl font-bold mb-6 text-center">Reimagining Battery Energy Storage</h2>
-                <p className="text-lg text-gray-700 mb-6">
-                  At Bessify, we've reimagined battery energy storage from the ground up — not by tweaking what exists, but by starting fresh. Our approach integrates hardware, software, safety, and manufacturing into a fully unified system, designed for a new generation of scalable, cost-efficient, and future-proof energy infrastructure.
-                </p>
-                <p className="text-lg text-gray-700">
-                  We believe innovation isn't just about features — it's about building smarter systems that are easier to manufacture, safer to operate, and more valuable over time. Here's how we're doing that:
-                </p>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                {/* Left side - Image */}
+                <div className="rounded-lg overflow-hidden shadow-md">
+                  <AspectRatio ratio={16/9}>
+                    <img 
+                      src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158" 
+                      alt="Battery energy storage system" 
+                      className="w-full h-full object-cover"
+                    />
+                  </AspectRatio>
+                </div>
+                
+                {/* Right side - Text */}
+                <div className="bg-gradient-to-r from-bessify-green-50 to-bessify-blue-50 p-8 rounded-2xl shadow-sm">
+                  <h2 className="text-3xl font-bold mb-6">Reimagining Battery Energy Storage</h2>
+                  <p className="text-lg text-gray-700 mb-6">
+                    At Bessify, we've reimagined battery energy storage from the ground up — not by tweaking what exists, but by starting fresh. Our approach integrates hardware, software, safety, and manufacturing into a fully unified system, designed for a new generation of scalable, cost-efficient, and future-proof energy infrastructure.
+                  </p>
+                  <p className="text-lg text-gray-700">
+                    We believe innovation isn't just about features — it's about building smarter systems that are easier to manufacture, safer to operate, and more valuable over time. Here's how we're doing that:
+                  </p>
+                </div>
               </div>
             </motion.div>
           </div>
@@ -266,25 +264,13 @@ const WhyBessifyPage = () => {
               <p className="text-xl mb-8">
                 Learn how our innovative BESS solutions can help your organization achieve its energy goals.
               </p>
-              <div className="flex flex-col sm:flex-row justify-center gap-4">
-                <Link to="/how-it-works">
-                  <Button size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-bessify-green-600">
-                    Explore Our Technology
-                  </Button>
-                </Link>
-                <Link to="/contact">
-                  <Button size="lg" className="bg-white text-bessify-green-600 hover:bg-bessify-green-50">
-                    Contact Our Experts
-                  </Button>
-                </Link>
-              </div>
             </motion.div>
           </div>
         </section>
       </main>
       <Footer />
 
-      <style jsx>{`
+      <style>{`
         .bg-grid-pattern {
           background-image: 
             linear-gradient(to right, rgba(0, 0, 0, 0.05) 1px, transparent 1px),
