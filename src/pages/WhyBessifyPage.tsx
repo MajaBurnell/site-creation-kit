@@ -1,3 +1,4 @@
+
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
@@ -9,290 +10,288 @@ import {
   Bolt, 
   Layers, 
   Settings, 
-  Battery
+  Battery,
+  ChevronRight
 } from "lucide-react";
 import { Link } from "react-router-dom";
+import { motion } from "framer-motion";
+import { 
+  Card,
+  CardContent,
+  CardDescription,
+  CardFooter,
+  CardHeader,
+  CardTitle
+} from "@/components/ui/card";
+
+const fadeInAnimationVariants = {
+  initial: { opacity: 0, y: 20 },
+  animate: (custom: number) => ({
+    opacity: 1,
+    y: 0,
+    transition: { delay: custom * 0.1, duration: 0.5 }
+  })
+};
+
+interface InnovationCardProps {
+  icon: React.ReactNode;
+  title: string;
+  description: string;
+  benefits: string[];
+  index: number;
+}
+
+const InnovationCard = ({ icon, title, description, benefits, index }: InnovationCardProps) => {
+  return (
+    <motion.div 
+      variants={fadeInAnimationVariants}
+      initial="initial"
+      whileInView="animate"
+      custom={index}
+      viewport={{ once: true, margin: "-50px" }}
+    >
+      <Card className="h-full hover:shadow-lg transition-all duration-300 border-bessify-green-100 hover:border-bessify-green-300">
+        <CardHeader className="pb-2">
+          <div className="rounded-full bg-bessify-green-100 w-16 h-16 flex items-center justify-center mb-4">
+            {icon}
+          </div>
+          <CardTitle className="text-2xl">{title}</CardTitle>
+        </CardHeader>
+        <CardContent className="pb-2">
+          <p className="text-gray-700 mb-4">
+            {description}
+          </p>
+          <ul className="space-y-2 pl-2">
+            {benefits.map((benefit, i) => (
+              <li key={i} className="flex items-start">
+                <span className="text-bessify-green-600 mr-2">
+                  <ChevronRight className="h-5 w-5" />
+                </span>
+                <span>{benefit}</span>
+              </li>
+            ))}
+          </ul>
+        </CardContent>
+      </Card>
+    </motion.div>
+  );
+};
 
 const WhyBessifyPage = () => {
+  const innovations = [
+    {
+      icon: <Settings className="h-8 w-8 text-bessify-green-600" />,
+      title: "Single Monoblock Battery Design",
+      description: "Traditional modular battery systems introduce risks like chemical imbalance and uneven thermal performance. Bessify eliminates this by using a streamlined monoblock architecture:",
+      benefits: [
+        "Reduces wiring complexity and failure points",
+        "Ensures consistent chemistry throughout the pack",
+        "Enables cell-level quality control for EU compliance and long-term reliability"
+      ]
+    },
+    {
+      icon: <Shield className="h-8 w-8 text-bessify-green-600" />,
+      title: "Smart, Custom-Built Enclosure",
+      description: "Our enclosure is more than a box — it's a safety and efficiency powerhouse:",
+      benefits: [
+        "Built in-house for precision and adaptability",
+        "No side doors, maximizing MW per m² on-site",
+        "Supports full automation and arrives fully assembled",
+        "Uses recyclable materials to meet long-term sustainability goals"
+      ]
+    },
+    {
+      icon: <Snowflake className="h-8 w-8 text-bessify-green-600" />,
+      title: "Advanced Thermal Management",
+      description: "We use air, not liquids — reducing fire risks and maintenance demands:",
+      benefits: [
+        "Uniform airflow design eliminates hotspots",
+        "Real-time temperature control and monitoring",
+        "Minimizes thermal stress, extending battery life and uptime"
+      ]
+    },
+    {
+      icon: <Shield className="h-8 w-8 text-bessify-green-600" />,
+      title: "Targeted Water Suppression System",
+      description: "Forget "let it burn." In case of thermal runaway:",
+      benefits: [
+        "Only the battery compartment floods — not the whole unit",
+        "Neutralizes toxic gas release, protects adjacent systems, and is safe for responders",
+        "Critical components can be reused in new enclosures, lowering costs"
+      ]
+    },
+    {
+      icon: <Battery className="h-8 w-8 text-bessify-green-600" />,
+      title: "Custom Inverter & Power Room Design",
+      description: "Most BESS companies buy off-the-shelf inverters — not Bessify:",
+      benefits: [
+        "In-house inverter design ensures tight integration and better energy conversion",
+        "Power room is fireproof, EMC-certified, and optimized for future cost shifts"
+      ]
+    },
+    {
+      icon: <Zap className="h-8 w-8 text-bessify-green-600" />,
+      title: "Multi-Duration, Multi-Inverter Architecture",
+      description: "Our BESS can operate across 1–4 hour durations, dynamically adapting to project needs:",
+      benefits: [
+        "Four inverters per 4MWh unit = built-in redundancy",
+        "Supports fast-response market shifts (e.g. "duck curve" events)",
+        "Enables flexible discharge profiles for a range of energy markets"
+      ]
+    },
+    {
+      icon: <Bolt className="h-8 w-8 text-bessify-green-600" />,
+      title: "Fully Automated, Scalable Manufacturing",
+      description: "We've designed our entire production process for efficiency and scale:",
+      benefits: [
+        "Enclosures and internals are built for robotic assembly",
+        "Optimized for cost-effective, high-volume production",
+        "Modular and adaptable for different scales and geographies"
+      ]
+    },
+    {
+      icon: <Layers className="h-8 w-8 text-bessify-green-600" />,
+      title: "Integrated Software & SaaS",
+      description: "Performance doesn't end at the hardware. Our optimization layer includes:",
+      benefits: [
+        "Performance-linked SaaS model tied to real system outputs",
+        "Initial rollout via white-labeled software, with potential for full in-house development",
+        "Unified experience for monitoring, diagnostics, and control across hardware and software"
+      ]
+    }
+  ];
+
   return (
     <div className="min-h-screen">
       <Navigation />
       <main>
-        {/* Hero Section */}
-        <section className="py-20 bg-gradient-to-b from-bessify-green-50 to-white">
-          <div className="container">
-            <div className="max-w-4xl mx-auto text-center">
-              <Wrench className="w-16 h-16 mx-auto mb-6 text-bessify-green-600" />
-              <h1 className="mb-6 text-gray-900">Why <span className="gradient-text">Bessify</span></h1>
-              <p className="text-xl text-gray-600 mb-8">
-                Engineering the Future of Battery Storage
+        {/* Hero Section with Gradient Background */}
+        <section className="py-24 bg-gradient-to-b from-bessify-green-50 via-white to-white relative overflow-hidden">
+          <div className="absolute inset-0 bg-grid-pattern opacity-10"></div>
+          <div className="container relative z-10">
+            <motion.div 
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.7 }}
+              className="max-w-4xl mx-auto text-center"
+            >
+              <div className="inline-flex items-center justify-center p-2 bg-bessify-green-100 rounded-full mb-6">
+                <Wrench className="w-10 h-10 text-bessify-green-600" />
+              </div>
+              <h1 className="mb-6 text-gray-900">
+                Why <span className="gradient-text">Bessify</span> Leads The Industry
+              </h1>
+              <p className="text-xl text-gray-600 mb-10 max-w-3xl mx-auto">
+                Engineering the Future of Battery Storage Systems with Revolutionary Design and Technology
               </p>
-            </div>
-          </div>
-        </section>
-
-        {/* Introduction Section */}
-        <section className="py-16">
-          <div className="container">
-            <div className="max-w-4xl mx-auto">
-              <p className="text-lg text-gray-700 mb-8">
-                At Bessify, we've reimagined battery energy storage from the ground up — not by tweaking what exists, but by starting fresh. Our approach integrates hardware, software, safety, and manufacturing into a fully unified system, designed for a new generation of scalable, cost-efficient, and future-proof energy infrastructure.
-              </p>
-              <p className="text-lg text-gray-700 mb-8">
-                We believe innovation isn't just about features — it's about building smarter systems that are easier to manufacture, safer to operate, and more valuable over time. Here's how we're doing that:
-              </p>
-            </div>
-          </div>
-        </section>
-
-        {/* Innovations Section */}
-        <section className="py-16 bg-bessify-green-50">
-          <div className="container">
-            <div className="max-w-4xl mx-auto">
-              {/* Innovation 1 */}
-              <div className="mb-16">
-                <div className="flex items-center mb-4">
-                  <div className="rounded-full bg-bessify-green-100 p-4 mr-4">
-                    <Settings className="h-8 w-8 text-bessify-green-600" />
-                  </div>
-                  <h2 className="text-2xl font-bold">1. Single Monoblock Battery Design</h2>
-                </div>
-                <p className="text-gray-700 mb-4">
-                  Traditional modular battery systems introduce risks like chemical imbalance and uneven thermal performance. Bessify eliminates this by using a streamlined monoblock architecture:
-                </p>
-                <ul className="space-y-2 mb-6 pl-6">
-                  <li className="flex items-start">
-                    <span className="text-bessify-green-600 font-bold mr-2">•</span>
-                    <span>Reduces wiring complexity and failure points</span>
-                  </li>
-                  <li className="flex items-start">
-                    <span className="text-bessify-green-600 font-bold mr-2">•</span>
-                    <span>Ensures consistent chemistry throughout the pack</span>
-                  </li>
-                  <li className="flex items-start">
-                    <span className="text-bessify-green-600 font-bold mr-2">•</span>
-                    <span>Enables cell-level quality control for EU compliance and long-term reliability</span>
-                  </li>
-                </ul>
-              </div>
-
-              {/* Innovation 2 */}
-              <div className="mb-16">
-                <div className="flex items-center mb-4">
-                  <div className="rounded-full bg-bessify-green-100 p-4 mr-4">
-                    <Shield className="h-8 w-8 text-bessify-green-600" />
-                  </div>
-                  <h2 className="text-2xl font-bold">2. Smart, Custom-Built Enclosure</h2>
-                </div>
-                <p className="text-gray-700 mb-4">
-                  Our enclosure is more than a box — it's a safety and efficiency powerhouse:
-                </p>
-                <ul className="space-y-2 mb-6 pl-6">
-                  <li className="flex items-start">
-                    <span className="text-bessify-green-600 font-bold mr-2">•</span>
-                    <span>Built in-house for precision and adaptability</span>
-                  </li>
-                  <li className="flex items-start">
-                    <span className="text-bessify-green-600 font-bold mr-2">•</span>
-                    <span>No side doors, maximizing MW per m² on-site</span>
-                  </li>
-                  <li className="flex items-start">
-                    <span className="text-bessify-green-600 font-bold mr-2">•</span>
-                    <span>Supports full automation and arrives fully assembled</span>
-                  </li>
-                  <li className="flex items-start">
-                    <span className="text-bessify-green-600 font-bold mr-2">•</span>
-                    <span>Uses recyclable materials to meet long-term sustainability goals</span>
-                  </li>
-                </ul>
-              </div>
-
-              {/* Innovation 3 */}
-              <div className="mb-16">
-                <div className="flex items-center mb-4">
-                  <div className="rounded-full bg-bessify-green-100 p-4 mr-4">
-                    <Snowflake className="h-8 w-8 text-bessify-green-600" />
-                  </div>
-                  <h2 className="text-2xl font-bold">3. Advanced Thermal Management</h2>
-                </div>
-                <p className="text-gray-700 mb-4">
-                  We use air, not liquids — reducing fire risks and maintenance demands:
-                </p>
-                <ul className="space-y-2 mb-6 pl-6">
-                  <li className="flex items-start">
-                    <span className="text-bessify-green-600 font-bold mr-2">•</span>
-                    <span>Uniform airflow design eliminates hotspots</span>
-                  </li>
-                  <li className="flex items-start">
-                    <span className="text-bessify-green-600 font-bold mr-2">•</span>
-                    <span>Real-time temperature control and monitoring</span>
-                  </li>
-                  <li className="flex items-start">
-                    <span className="text-bessify-green-600 font-bold mr-2">•</span>
-                    <span>Minimizes thermal stress, extending battery life and uptime</span>
-                  </li>
-                </ul>
-              </div>
-
-              {/* Innovation 4 */}
-              <div className="mb-16">
-                <div className="flex items-center mb-4">
-                  <div className="rounded-full bg-bessify-green-100 p-4 mr-4">
-                    <Shield className="h-8 w-8 text-bessify-green-600" />
-                  </div>
-                  <h2 className="text-2xl font-bold">4. Targeted Water Suppression System</h2>
-                </div>
-                <p className="text-gray-700 mb-4">
-                  Forget "let it burn." In case of thermal runaway:
-                </p>
-                <ul className="space-y-2 mb-6 pl-6">
-                  <li className="flex items-start">
-                    <span className="text-bessify-green-600 font-bold mr-2">•</span>
-                    <span>Only the battery compartment floods — not the whole unit</span>
-                  </li>
-                  <li className="flex items-start">
-                    <span className="text-bessify-green-600 font-bold mr-2">•</span>
-                    <span>Neutralizes toxic gas release, protects adjacent systems, and is safe for responders</span>
-                  </li>
-                  <li className="flex items-start">
-                    <span className="text-bessify-green-600 font-bold mr-2">•</span>
-                    <span>Critical components can be reused in new enclosures, lowering costs</span>
-                  </li>
-                </ul>
-              </div>
-
-              {/* Innovation 5 */}
-              <div className="mb-16">
-                <div className="flex items-center mb-4">
-                  <div className="rounded-full bg-bessify-green-100 p-4 mr-4">
-                    <Battery className="h-8 w-8 text-bessify-green-600" />
-                  </div>
-                  <h2 className="text-2xl font-bold">5. Custom Inverter & Power Room Design</h2>
-                </div>
-                <p className="text-gray-700 mb-4">
-                  Most BESS companies buy off-the-shelf inverters — not Bessify:
-                </p>
-                <ul className="space-y-2 mb-6 pl-6">
-                  <li className="flex items-start">
-                    <span className="text-bessify-green-600 font-bold mr-2">•</span>
-                    <span>In-house inverter design ensures tight integration and better energy conversion</span>
-                  </li>
-                  <li className="flex items-start">
-                    <span className="text-bessify-green-600 font-bold mr-2">•</span>
-                    <span>Power room is fireproof, EMC-certified, and optimized for future cost shifts (as battery prices drop and power electronics grow in value)</span>
-                  </li>
-                </ul>
-              </div>
-
-              {/* Innovation 6 */}
-              <div className="mb-16">
-                <div className="flex items-center mb-4">
-                  <div className="rounded-full bg-bessify-green-100 p-4 mr-4">
-                    <Zap className="h-8 w-8 text-bessify-green-600" />
-                  </div>
-                  <h2 className="text-2xl font-bold">6. Multi-Duration, Multi-Inverter Architecture</h2>
-                </div>
-                <p className="text-gray-700 mb-4">
-                  Our BESS can operate across 1–4 hour durations, dynamically adapting to project needs:
-                </p>
-                <ul className="space-y-2 mb-6 pl-6">
-                  <li className="flex items-start">
-                    <span className="text-bessify-green-600 font-bold mr-2">•</span>
-                    <span>Four inverters per 4MWh unit = built-in redundancy</span>
-                  </li>
-                  <li className="flex items-start">
-                    <span className="text-bessify-green-600 font-bold mr-2">•</span>
-                    <span>Supports fast-response market shifts (e.g. "duck curve" events)</span>
-                  </li>
-                  <li className="flex items-start">
-                    <span className="text-bessify-green-600 font-bold mr-2">•</span>
-                    <span>Enables flexible discharge profiles for a range of energy markets</span>
-                  </li>
-                </ul>
-              </div>
-
-              {/* Innovation 7 */}
-              <div className="mb-16">
-                <div className="flex items-center mb-4">
-                  <div className="rounded-full bg-bessify-green-100 p-4 mr-4">
-                    <Bolt className="h-8 w-8 text-bessify-green-600" />
-                  </div>
-                  <h2 className="text-2xl font-bold">7. Fully Automated, Scalable Manufacturing</h2>
-                </div>
-                <p className="text-gray-700 mb-4">
-                  We've designed our entire production process for efficiency and scale:
-                </p>
-                <ul className="space-y-2 mb-6 pl-6">
-                  <li className="flex items-start">
-                    <span className="text-bessify-green-600 font-bold mr-2">•</span>
-                    <span>Enclosures and internals are built for robotic assembly</span>
-                  </li>
-                  <li className="flex items-start">
-                    <span className="text-bessify-green-600 font-bold mr-2">•</span>
-                    <span>Optimized for cost-effective, high-volume production</span>
-                  </li>
-                  <li className="flex items-start">
-                    <span className="text-bessify-green-600 font-bold mr-2">•</span>
-                    <span>Modular and adaptable for different scales and geographies</span>
-                  </li>
-                </ul>
-              </div>
-
-              {/* Innovation 8 */}
-              <div className="mb-8">
-                <div className="flex items-center mb-4">
-                  <div className="rounded-full bg-bessify-green-100 p-4 mr-4">
-                    <Layers className="h-8 w-8 text-bessify-green-600" />
-                  </div>
-                  <h2 className="text-2xl font-bold">8. Integrated Software & SaaS</h2>
-                </div>
-                <p className="text-gray-700 mb-4">
-                  Performance doesn't end at the hardware. Our optimization layer includes:
-                </p>
-                <ul className="space-y-2 mb-6 pl-6">
-                  <li className="flex items-start">
-                    <span className="text-bessify-green-600 font-bold mr-2">•</span>
-                    <span>Performance-linked SaaS model tied to real system outputs</span>
-                  </li>
-                  <li className="flex items-start">
-                    <span className="text-bessify-green-600 font-bold mr-2">•</span>
-                    <span>Initial rollout via white-labeled software, with potential for full in-house development</span>
-                  </li>
-                  <li className="flex items-start">
-                    <span className="text-bessify-green-600 font-bold mr-2">•</span>
-                    <span>Unified experience for monitoring, diagnostics, and control across hardware and software</span>
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* CTA Section */}
-        <section className="py-16">
-          <div className="container">
-            <div className="max-w-4xl mx-auto text-center">
-              <h2 className="text-3xl font-bold mb-6">Ready to Transform Your <span className="gradient-text">Energy Future?</span></h2>
-              <p className="text-lg text-gray-700 mb-8">
-                Learn how our innovative BESS solutions can help your organization achieve its energy goals.
-              </p>
-              <div className="flex flex-col sm:flex-row justify-center gap-4">
-                <Link to="/products">
-                  <Button size="lg" className="bg-bessify-green-600 hover:bg-bessify-green-700">
-                    Explore Our Products
+              <div className="flex flex-wrap justify-center gap-4">
+                <Link to="/how-it-works">
+                  <Button size="lg" variant="outline" className="border-bessify-green-600 text-bessify-green-600 hover:bg-bessify-green-50">
+                    See How It Works
                   </Button>
                 </Link>
                 <Link to="/contact">
-                  <Button size="lg" variant="outline" className="border-bessify-green-600 text-bessify-green-600 hover:bg-bessify-green-50">
+                  <Button size="lg" className="bg-bessify-green-600 hover:bg-bessify-green-700">
+                    Talk to an Expert
+                  </Button>
+                </Link>
+              </div>
+            </motion.div>
+          </div>
+        </section>
+
+        {/* Introduction Section with Animated Background */}
+        <section className="py-16 bg-white relative">
+          <div className="container">
+            <motion.div 
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              transition={{ duration: 0.7 }}
+              viewport={{ once: true }}
+              className="max-w-4xl mx-auto"
+            >
+              <div className="bg-gradient-to-r from-bessify-green-50 to-bessify-blue-50 p-8 rounded-2xl shadow-sm">
+                <h2 className="text-3xl font-bold mb-6 text-center">Reimagining Battery Energy Storage</h2>
+                <p className="text-lg text-gray-700 mb-6">
+                  At Bessify, we've reimagined battery energy storage from the ground up — not by tweaking what exists, but by starting fresh. Our approach integrates hardware, software, safety, and manufacturing into a fully unified system, designed for a new generation of scalable, cost-efficient, and future-proof energy infrastructure.
+                </p>
+                <p className="text-lg text-gray-700">
+                  We believe innovation isn't just about features — it's about building smarter systems that are easier to manufacture, safer to operate, and more valuable over time. Here's how we're doing that:
+                </p>
+              </div>
+            </motion.div>
+          </div>
+        </section>
+
+        {/* Innovations Section with Card Grid */}
+        <section className="py-16 bg-bessify-green-50">
+          <div className="container">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5 }}
+              viewport={{ once: true }}
+              className="text-center mb-12"
+            >
+              <h2 className="text-3xl font-bold mb-4">Our Innovations</h2>
+              <div className="w-24 h-1 bg-bessify-green-600 mx-auto"></div>
+            </motion.div>
+            
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
+              {innovations.map((innovation, index) => (
+                <InnovationCard 
+                  key={index}
+                  icon={innovation.icon}
+                  title={innovation.title}
+                  description={innovation.description}
+                  benefits={innovation.benefits}
+                  index={index}
+                />
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* CTA Section with Gradient Background */}
+        <section className="py-20 bg-gradient-to-r from-bessify-green-600 to-bessify-blue-600 text-white">
+          <div className="container">
+            <motion.div 
+              initial={{ opacity: 0, scale: 0.95 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.5 }}
+              viewport={{ once: true }}
+              className="max-w-4xl mx-auto text-center"
+            >
+              <h2 className="text-3xl font-bold mb-6">Ready to Transform Your Energy Future?</h2>
+              <p className="text-xl mb-8">
+                Learn how our innovative BESS solutions can help your organization achieve its energy goals.
+              </p>
+              <div className="flex flex-col sm:flex-row justify-center gap-4">
+                <Link to="/how-it-works">
+                  <Button size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-bessify-green-600">
+                    Explore Our Technology
+                  </Button>
+                </Link>
+                <Link to="/contact">
+                  <Button size="lg" className="bg-white text-bessify-green-600 hover:bg-bessify-green-50">
                     Contact Our Experts
                   </Button>
                 </Link>
               </div>
-            </div>
+            </motion.div>
           </div>
         </section>
       </main>
       <Footer />
+
+      <style jsx>{`
+        .bg-grid-pattern {
+          background-image: 
+            linear-gradient(to right, rgba(0, 0, 0, 0.05) 1px, transparent 1px),
+            linear-gradient(to bottom, rgba(0, 0, 0, 0.05) 1px, transparent 1px);
+          background-size: 20px 20px;
+        }
+      `}</style>
     </div>
   );
 };
