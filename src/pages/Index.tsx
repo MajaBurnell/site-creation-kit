@@ -2,8 +2,6 @@ import Navigation from "@/components/Navigation";
 import Hero from "@/components/Hero";
 import Features from "@/components/Features";
 import AboutSection from "@/components/AboutSection";
-import ContactSection from "@/components/ContactSection";
-import Footer from "@/components/Footer";
 import { useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, LineChart, Zap, Battery, ShieldCheck } from "lucide-react";
@@ -112,13 +110,6 @@ const Index = () => {
                   </div>
                 </div>
                 
-                <div>
-                  <Link to="/products">
-                    <Button className="mt-4 bg-bessify-green-600 hover:bg-bessify-green-700">
-                      Explore Our Products <ArrowRight className="ml-2 h-4 w-4" />
-                    </Button>
-                  </Link>
-                </div>
               </div>
             </div>
           </div>
@@ -130,7 +121,7 @@ const Index = () => {
             <div className="flex flex-col md:flex-row justify-between items-center">
               <div className="mb-4 md:mb-0 text-center md:text-left">
                 <h3 className="text-xl font-bold">Ready to start your journey toward energy independence?</h3>
-                <p className="text-bessify-green-100">Schedule a free consultation with our energy experts.</p>
+                <p className="text-bessify-green-100"> </p>
               </div>
               <Link to="/contact">
                 <Button className="bg-white text-bessify-green-700 hover:bg-bessify-green-50" size="lg">
@@ -142,9 +133,9 @@ const Index = () => {
         </section>
         
         <AboutSection />
-        <ContactSection />
+       
       </main>
-      <Footer />
+    
     </div>
   );
 };

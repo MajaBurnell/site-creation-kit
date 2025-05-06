@@ -50,8 +50,7 @@ const Navigation = () => {
           </nav>
           
           <div className="hidden md:flex items-center space-x-4">
-            <Button variant="outline" size="sm" className="border-bessify-green-600 text-bessify-green-600 hover:bg-bessify-green-50">Request Demo</Button>
-            <Button size="sm" className="bg-bessify-green-600 hover:bg-bessify-green-700">Get a Quote</Button>
+            
           </div>
           
           <button className="md:hidden" onClick={toggleMenu} aria-label="Toggle menu">

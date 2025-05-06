@@ -268,7 +268,7 @@ const WhyBessifyPage = () => {
           </div>
         </section>
       </main>
-      <Footer />
+  
 
       <style>{`
         .bg-grid-pattern {

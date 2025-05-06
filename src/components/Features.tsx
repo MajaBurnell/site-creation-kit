@@ -3,29 +3,30 @@ import {
   Battery, 
   BarChart3, 
   Zap, 
-  Cpu
+  Cpu, 
+  Snowflake
 } from "lucide-react";
 
 const features = [
   {
     icon: <Battery className="w-10 h-10 text-bessify-green-600" />,
-    title: "To be done",
-    description: "To be done"
+    title: "Scalable BESS Architecture",
+    description: "A flexible, containerised energy storage solution designed to scale with project needs"
   },
   {
     icon: <Zap className="w-10 h-10 text-bessify-green-600" />,
-    title: "To be done",
-    description: "To be done"
+    title: "High-Efficiency Power Components",
+    description: "Custom-designed inverters, switchgear, and BMS deliver peak performance and unmatched safety"
   },
   {
     icon: <Cpu className="w-10 h-10 text-bessify-green-600" />,
-    title: "To be done",
-    description: "To be done"
+    title: "Smart System Software",
+    description: "Proprietary OS and SCADA enable real-time control, monitoring and remote diagnostics"
   },
   {
-    icon: <BarChart3 className="w-10 h-10 text-bessify-green-600" />,
-    title: "To be done",
-    description: "To be done"
+    icon: <Snowflake className="w-10 h-10 text-bessify-green-600" />,
+    title: "Advanced Cooling & Safety",
+    description: "Air-cooled and multi-stage thermal protection systems keep performance safe and stable"
   }
 ];
 
@@ -38,7 +39,7 @@ const Features = () => {
             Advanced <span className="gradient-text">BESS Solutions</span> for Sustainable Energy
           </h2>
           <p className="text-lg text-gray-600">
-            To be done
+           
           </p>
         </div>
 

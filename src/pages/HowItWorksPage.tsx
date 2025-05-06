@@ -37,7 +37,9 @@ const HowItWorksPage = () => {
                   BESS systems act as energy reservoirs, enabling users to store electricity when it's abundant or inexpensive and use it during peak demand periods or when renewable sources like solar and wind aren't actively generating.
                 </p>
                 <p className="text-lg text-gray-600">
-                  Modern BESS solutions utilize sophisticated battery chemistry—primarily lithium-ion technology—paired with advanced power electronics and intelligent control systems to provide safe, reliable, and efficient energy management.
+                Modern BESS solutions use advanced battery chemistries — such as lithium iron phosphate (LFP) — 
+                paired with intelligent control systems and custom power electronics to deliver safe, scalable, 
+                and efficient energy management.
                 </p>
               </div>
               <div className="rounded-xl overflow-hidden">
@@ -69,7 +71,8 @@ const HowItWorksPage = () => {
                   </div>
                   <h3 className="text-xl font-bold mb-3">1. Energy Capture</h3>
                   <p className="text-gray-600">
-                    The BESS collects electricity from various sources—grid power during off-peak hours, solar panels, wind turbines, or other generation methods. A power conversion system (PCS) converts incoming AC electricity to DC for battery storage.
+                    The BESS collects electricity from various sources—grid power during off-peak hours, solar panels, wind turbines, 
+                    or other generation methods. A power conversion system (PCS) converts incoming AC electricity to DC for battery storage.
                   </p>
                 </CardContent>
               </Card>
@@ -81,7 +84,9 @@ const HowItWorksPage = () => {
                   </div>
                   <h3 className="text-xl font-bold mb-3">2. Energy Storage</h3>
                   <p className="text-gray-600">
-                    Energy is stored in advanced battery modules—typically lithium-ion cells arranged in scalable configurations. The Battery Management System (BMS) continuously monitors temperature, voltage, and state of charge to ensure safe and efficient operation.
+                  Energy is stored in advanced battery modules — typically using lithium iron phosphate (LFP) or other
+                   scalable chemistries. The Battery Management System (BMS) continuously monitors temperature, voltage, 
+                   and state of charge to ensure safe, efficient operation.
                   </p>
                 </CardContent>
               </Card>
@@ -175,22 +180,9 @@ const HowItWorksPage = () => {
           </div>
         </section>
 
-        {/* CTA Section */}
-        <section className="py-16 bg-bessify-green-600 text-white">
-          <div className="container">
-            <div className="max-w-3xl mx-auto text-center">
-              <h2 className="mb-6 text-white">Ready to transform your energy future?</h2>
-              <p className="text-xl text-bessify-green-100 mb-8">
-                Contact our experts to learn how a Bessify BESS solution can be customized for your specific energy needs.
-              </p>
-              <Button className="bg-white text-bessify-green-700 hover:bg-bessify-green-50" size="lg">
-                Request Consultation
-              </Button>
-            </div>
-          </div>
-        </section>
+       
       </main>
-      <Footer />
+
     </div>
   );
 };

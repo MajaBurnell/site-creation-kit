@@ -7,36 +7,37 @@ import { Button } from "@/components/ui/button";
 const AboutPage = () => {
   const milestones = [
     {
-      year: "2018",
-      title: "Company Founded",
-      description: "Bessify was established with a mission to accelerate sustainable energy adoption."
-    },
-    {
-      year: "2019",
-      title: "First BESS Prototype",
-      description: "Developed our first 250kW battery energy storage system prototype."
-    },
-    {
-      year: "2020",
-      title: "Series A Funding",
-      description: "Secured $12M in funding to scale production and expand R&D efforts."
-    },
-    {
-      year: "2021",
-      title: "Commercial Launch",
-      description: "Released first commercial BESS product line for industrial applications."
-    },
-    {
       year: "2022",
-      title: "Utility Partnerships",
-      description: "Formed key partnerships with 5 major utility companies for grid-scale projects."
+      title: "R&D Initiated",
+      description: "Initiated research into BESS technology to pioneer next-generation energy storage solutions."
+    },
+    {
+      year: "2022–2023",
+      title: "Custom System Design",
+      description: "Identified the need for bespoke inverters and battery modules; began in-house hardware design focused on manufacturability."
     },
     {
       year: "2023",
-      title: "International Expansion",
-      description: "Opened offices in Europe and Asia to serve growing global demand."
+      title: "Software & Hardware Control",
+      description: "Committed to complete in-house control of all software systems and custom-built hardware for operational precision."
+    },
+    {
+      year: "2023",
+      title: "Global Sourcing Strategy",
+      description: "Temporarily sourced battery cells from Asia while developing plans for local partnerships to support future scalability."
+    },
+    {
+      year: "2024 Q1",
+      title: "Prototype Success",
+      description: "Built and tested an 11kW prototype system that exceeded performance expectations, validating the BESS concept."
+    },
+    {
+      year: "2024 Q2",
+      title: "Scale-Up to 1.2MWh",
+      description: "Proceeded directly to a 1.2 MWh grid-scale system based on successful prototype results and operational readiness."
     }
   ];
+  
 
   return (
     <div className="min-h-screen">
@@ -62,13 +63,23 @@ const AboutPage = () => {
               <div>
                 <h2 className="mb-6 text-gray-900">Our Story</h2>
                 <p className="text-lg text-gray-600 mb-6">
-                  Founded in 2018 by a team of engineers and clean energy enthusiasts, Bessify emerged from a shared vision: to create battery technology that makes renewable energy more reliable, efficient, and accessible.
+                Bessify OÜ is a pioneering Estonian startup at the forefront of designing and manufacturing
+                grid-sized Battery Energy Storage Systems (BESS). Our approach integrates holistic design principles
+                with a highly vertical manufacturing process. Our operations are rooted in Tallinn, Estonia,
+                where we engage in both research & development and manufacturing. As we expand,
+                our vision is to scale these activities across multiple European locations, enhancing our capacity to support
+                 the continent's energy transition.
                 </p>
                 <p className="text-lg text-gray-600 mb-6">
-                  What began as a small R&D project in a university lab has grown into a leading provider of Battery Energy Storage Systems (BESS) serving customers across industrial, commercial, and utility sectors.
+                Central to our mission is the commitment to local sourcing and manufacturing. We prioritize the use of recycled 
+                materials and strive to keep our supply chain as close to home as possible. While renewable sectors like wind, 
+                hydro, and solar have historically received governmental support, battery storage has not — making our mission clear:
+                to deliver solutions that are not only sustainable but economically viable.
+      
                 </p>
                 <p className="text-lg text-gray-600">
-                  Today, we're proud to be at the forefront of the energy transition, with over 100MW of installed capacity helping to balance grids, integrate renewables, and reduce carbon emissions worldwide.
+                <strong>Our mission:</strong> Design cutting-edge storage systems which are leading in efficiency and functionality while setting a new benchmark for price per MW — all while using the most sustainable technologies and methodologies.
+                
                 </p>
               </div>
               <div className="rounded-xl overflow-hidden">
@@ -160,7 +171,7 @@ const AboutPage = () => {
           </div>
         </section>
       </main>
-      <Footer />
+     
     </div>
   );
 };
